@@ -3,9 +3,13 @@
     White Board
   </h1>
 
-  <div [hidden]="loggedIn">
-    <a routerLink="/login">Login</a>
-    <a routerLink="/register">Register</a>
+  <div [hidden]="loggedIn" class="row">
+    <div class="container-fluid">
+      <a routerLink="/login">Login</a>
+    </div>
+    <div class="container-fluid">
+      <a routerLink="/register">Register</a>
+    </div>
   </div>
   <div [hidden]="!loggedIn">
     <a routerLink="/profile">Profile</a>
