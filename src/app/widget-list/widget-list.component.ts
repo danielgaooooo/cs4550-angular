@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {WidgetServiceClient} from "../services/widget.service.client";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {WidgetServiceClient} from '../services/widget.service.client';
 
 @Component({
   selector: 'app-widget-list',
@@ -16,10 +16,12 @@ export class WidgetListComponent implements OnInit {
 
   context;
   widgets = [];
+
   setContext(params) {
     this.context = params;
     this.loadWidgets(params.lessonId);
   }
+
   loadWidgets(lessonId) {
     this.service.findWidgetsForLesson(lessonId)
       .then(widgets => this.widgets = widgets);
