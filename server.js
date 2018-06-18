@@ -7,7 +7,7 @@ app.use(express.static(__dirname + './dist/cs4550-angular'));
 
 
 app.get('/*', function(req,res) {
-  res.sendFile(path.join(__dirname + '/dist/cs4550-angular/index.html'));
+  res.sendFile(path.join(__dirname, './dist/cs4550-angular/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
