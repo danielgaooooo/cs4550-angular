@@ -1,0 +1,41 @@
+<div class="container-fluid" [hidden]="!loaded">
+  <h1>Sections for course: {{courseId}}</h1>
+  <input [(ngModel)]="sectionName"
+         placeholder="Section Name"
+         class="form-control">
+  <input [(ngModel)]="seats"
+         placeholder="Seats available"
+         class="form-control">
+  <button (click)="createSection(sectionName, seats)" class="btn btn-success btn-block">
+    Add Section
+  </button>
+
+  <ul class="list-group">
+    <li *ngFor="let section of sections" class="list-group-item">
+      <div [hidden]="editing && section._id === selectedSection">
+        {{section.name}} {{section.seats}}
+        <button (click)="edit(section._id)"
+                class="float-right btn btn-primary">Edit
+        </button>
+        <button (click)="delete(section._id)"
+                class="float-right btn btn-danger">Delete
+        </button>
+      </div>
+      <div [hidden]="!(editing && section._id === selectedSection)">
+        <input [(ngModel)]="section.name"
+               placeholder="Section Name"
+               class="form-control">
+        <input [(ngModel)]="section.seats"
+               placeholder="Seats available"
+               class="form-control">
+        <button (click)="update(section._id)"
+                class="float-right btn btn-primary">Update
+        </button>
+        <button (click)="delete(section._id)"
+                class="float-right btn btn-danger">Delete
+        </button>
+      </div>
+    </li>
+  </ul>
+  <a routerLink="/home">Home</a>
+</div>

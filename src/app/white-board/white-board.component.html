@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <h1>
+    White Board
+  </h1>
+
+  <div [hidden]="loggedIn">
+    <a routerLink="/login">Login</a>
+    <a routerLink="/register">Register</a>
+  </div>
+  <div [hidden]="!loggedIn">
+    <a routerLink="/profile">Profile</a>
+  </div>
+
+  <h2>Currently enrolled sections: ({{sections.length}})</h2>
+  <ul class="list-group">
+    <li *ngFor="let enrollment of sections" class="list-group-item">
+      {{enrollment.section.name}}
+      ({{enrollment.section.seats}})
+    </li>
+  </ul>
+
+  <app-course-grid></app-course-grid>
+</div>
