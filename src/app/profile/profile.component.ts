@@ -28,8 +28,8 @@ export class ProfileComponent implements OnInit {
   sections = [];
   admin;
 
-  update(user) {
-    user = {
+  update() {
+    const user = {
       username: this.username,
       password: this.password,
       firstName: this.firstName,
