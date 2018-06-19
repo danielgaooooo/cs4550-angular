@@ -3,10 +3,10 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(__dirname + './dist/cs4550-angular'));
+app.use(express.static('./dist/cs4550-angular'));
 
 
-app.get('/*', function(req,res) {
+app.get('/*all', function(req,res) {
   res.sendFile(path.join(__dirname, './dist/cs4550-angular/index.html'));
 });
 
